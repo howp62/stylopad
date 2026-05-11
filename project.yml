@@ -1,0 +1,95 @@
+name: Stylopad
+options:
+  bundleIdPrefix: com.jahyeonko
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    DEVELOPMENT_TEAM: RP5GZ99V95
+    SWIFT_VERSION: "5.10"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_STRICT_CONCURRENCY: minimal
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "2"
+    SUPPORTS_MACCATALYST: NO
+
+targets:
+  Stylopad:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Stylopad
+        excludes:
+          - "**/*.md"
+    resources:
+      - path: Stylopad/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gojaehyun.stylopad
+        PRODUCT_NAME: Stylopad
+        INFOPLIST_FILE: Stylopad/Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "2"
+        SUPPORTS_MACCATALYST: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: RP5GZ99V95
+        CODE_SIGN_IDENTITY: "Apple Development"
+        ENABLE_PREVIEWS: YES
+        SWIFT_EMIT_LOC_STRINGS: YES
+        UISupportedInterfaceOrientations: "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+    info:
+      path: Stylopad/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Stylopad
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSRequiresIPhoneOS: true
+        UILaunchScreen:
+          UIColorName: ""
+          UIImageRespectsSafeAreaInsets: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIRequiresFullScreen: true
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIRequiredDeviceCapabilities:
+          - arm64
+        UIBackgroundModes:
+          - audio
+        UIPencilInteractionsCapable: true
+
+  StylopadTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources: StylopadTests
+    dependencies:
+      - target: Stylopad
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gojaehyun.stylopad.tests
+        TARGETED_DEVICE_FAMILY: "2"
+
+schemes:
+  Stylopad:
+    build:
+      targets:
+        Stylopad: all
+        StylopadTests: [test]
+    test:
+      targets:
+        - StylopadTests
+    run:
+      config: Debug
+    archive:
+      config: Release

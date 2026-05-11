@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata
+*.xcodeproj/xcuserdata
+*.xcodeproj/project.xcworkspace/xcuserdata
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Packages/
+Package.pins
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build
+
+# Generated Xcode project (xcodegen)
+# Keep project.yml as source of truth; .xcodeproj is regenerated
+Stylopad.xcodeproj/
+
+# Local OMC state
+.omc/state/sessions/
+.omc/logs/
+
+# Misc
+*.log
+*.pid
