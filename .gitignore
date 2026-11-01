@@ -34,3 +34,65 @@ Stylopad.xcodeproj/
 # Misc
 *.log
 *.pid
+
+# >>> drive-backup 공통 (자동 관리 — 수정은 ~/ai-lab/drive-backup/gitignore.common) >>>
+# ── drive-backup 공통 제외 (원본: ~/ai-lab/drive-backup/gitignore.common) ──
+# 비밀값 (CLAUDE.md 규칙 9·10)
+.env
+.env.*
+*.env
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.clasprc.json
+client_secret*.json
+credentials*.json
+*service-account*.json
+*serviceaccount*.json
+*-adminsdk-*.json
+token.json
+token.pickle
+.npmrc
+.netrc
+# 조사에서 토큰이 발견된 위치 (Claude Code 로컬 설정·감사 로그)
+.claude/settings.local.json
+.bkit/
+
+# 학생 개인정보 (조사 결과 해당 파일 0개 — 새로 생기는 경우 대비)
+*.xlsx
+*.xls
+*.csv
+*.hwp
+*.hwpx
+*학생*
+*생기부*
+*생활기록부*
+*성적*
+
+# 의존성·빌드 산출물
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+dist/
+build/
+target/
+.next/
+out/
+coverage/
+.cache/
+*.log
+
+# macOS · exFAT
+.DS_Store
+._*
+.Spotlight-V100/
+.Trashes/
+# 이 폴더만 추가 제외 (targets.yaml)
+*.xcuserstate
+xcuserdata/
+DerivedData/
+# <<< drive-backup 공통 <<<
